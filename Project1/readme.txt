@@ -11,11 +11,6 @@ Parallel - 46m23.209s
 Serial   - 93m58.698s
 
 
-Other information: I've included output for both downloaders below. Each program was given a list of 6 text files to download. Full output and runtime are included
-
-I did not implement the extra credit. 
-
-
 ////////////////////////////////////////////////////////////
 Parallel Output
 ////////////////////////////////////////////////////////////
