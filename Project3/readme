@@ -1,0 +1,82 @@
+Name: Daniel Jordan
+Titan username: cs351g13
+Email: daniel_jordan@csu.fullerton.edu
+Language: C++
+Files: memorymap.cpp
+
+Instructions: Compile source with "make memorymap". Execute with "./memorymap <source> <destination>". To execute on included pdf file, run "./memorymap Assignment3.pdf destination.pdf".
+
+Explanation of code: Source file and destination file are passed to program as command line arguments. The size of the input file is taken, and the destination file's pointer is moved 
+N bytes, where N is the input file's total size. A single byte is then written, which fills in the space before the pointer, matching the size of the source and destination files so they can be mapped. 
+The output file is then closed, and both files are reopened with proper read/write permissions. To prevent wasted memory allocation, the system's pagesize is fetched, and the file is access in pagefile
+sized chunks of data. Each file is then mapped to separate buffers, and those buffers are written to the destination file. The file offset is updated, to reflect the data just copied. The buffers are then
+unmapped, so the loop can start again. The loop will continue until the offset has reached the end of the input file. The files are then closed, and the program terminates.
+
+
+Sample output using the PDF given for Assignment 3
+
+-bash-3.2$ ./memorymap Assignment3.pdf destination.pdf
+Source File: Assignment3.pdf
+Destination File: destination.pdf
+Source File Size: 229350 bytes
+Updated Destination File Size: 229350 bytes
+Pagesize: 4096 bytes
+1 complete
+3 complete
+5 complete
+7 complete
+8 complete
+10 complete
+12 complete
+14 complete
+16 complete
+17 complete
+19 complete
+21 complete
+23 complete
+25 complete
+26 complete
+28 complete
+30 complete
+32 complete
+33 complete
+35 complete
+37 complete
+39 complete
+41 complete
+42 complete
+44 complete
+46 complete
+48 complete
+50 complete
+51 complete
+53 complete
+55 complete
+57 complete
+58 complete
+60 complete
+62 complete
+64 complete
+66 complete
+67 complete
+69 complete
+71 complete
+73 complete
+75 complete
+76 complete
+78 complete
+80 complete
+82 complete
+83 complete
+85 complete
+87 complete
+89 complete
+91 complete
+92 complete
+94 complete
+96 complete
+98 complete
+100 complete
+Total data copied: 229350 bytes
+
+./Assignment3.pdf successfully copied to ./destination.pdf
